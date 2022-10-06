@@ -10,7 +10,7 @@ const AllImages = () => {
   const { email } = user;
 
   useEffect(() => {
-    let url = `http://localhost:5000/photos`;
+    let url = `https://rafath-auvee-dobby-server-production.up.railway.app/photos`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setImages(data));

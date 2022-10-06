@@ -19,7 +19,7 @@ const AddImage = () => {
 
   const imgStorageKey = "f3f22ee15d3ef328ecec838de6b26a6d";
 
-  const BaseUrl = "http://localhost:5000/photos";
+  const BaseUrl = "https://rafath-auvee-dobby-server-production.up.railway.app/photos";
   const onSubmit = async (data) => {
     setAddloading(true);
     const image = data.image[0];
