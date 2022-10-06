@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./../../firebase.init";
 
 const AddImage = () => {
   const {
@@ -12,8 +14,12 @@ const AddImage = () => {
   } = useForm();
   const [addloading, setAddloading] = useState(false);
 
+  const [user] = useAuthState(auth);
+  const { email } = user;
+
   const imgStorageKey = "f3f22ee15d3ef328ecec838de6b26a6d";
 
+  const BaseUrl = "http://localhost:5000/photos";
   const onSubmit = async (data) => {
     setAddloading(true);
     const image = data.image[0];
@@ -31,8 +37,9 @@ const AddImage = () => {
           const product = {
             name: data.name,
             url: image,
+            email: email,
           };
-          fetch(`https://marley-electronics.herokuapp.com/product`, {
+          fetch(`${BaseUrl}`, {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -110,7 +117,11 @@ const AddImage = () => {
               <div className="w-16 h-16 border-b-2 border-amber-900 rounded-full animate-spin mx-auto"></div>
             )}
           </div>
-          <input className="btn w-full max-w-xs " type="submit" value="Add" />
+          <input
+            className="btn w-full max-w-xs rounded bg-amber-800 border-0"
+            type="submit"
+            value="Add"
+          />
         </form>
       </div>
     </div>
