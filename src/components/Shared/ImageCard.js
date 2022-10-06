@@ -5,7 +5,7 @@ const ImageCard = ({ setImages, images }) => {
     <div className="flex justify-center">
       <div className="rounded-lg shadow-lg bg-white max-w-sm h-full">
         <a href="#!">
-          <img className="rounded-t-lg h-[350px] w-full" src={images.url} alt="" />
+          <img className="rounded-t-lg h-[350px] w-full border-3" src={images.url} alt="" />
         </a>
         <div className="p-6">
           <h5 className="text-gray-900 text-lg font-medium mb-2">

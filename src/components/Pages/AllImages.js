@@ -18,11 +18,14 @@ const AllImages = () => {
 
   return (
     <div>
+      <h1 className="text-center mt-5 text-3xl font-bold">
+        All Images {images.length}
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10 my-10">
-        {images.map((image) => {
+        {images.map((image, index) => {
           return (
             <div>
-              <ImageCard images={image} />{" "}
+              <ImageCard key={index} images={image} />{" "}
             </div>
           );
         })}

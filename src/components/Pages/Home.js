@@ -7,18 +7,21 @@ import auth from "./../../firebase.init";
 const Home = () => {
   const [myimages, setMyImages] = useState([]);
   const [user] = useAuthState(auth);
-  const { email } = user;
+  // console.log(user);
 
   useEffect(() => {
-    let url = `http://localhost:5000/myphotos?email=${email}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setMyImages(data));
-  }, []);
+    if (user) {
+      const { email } = user;
+      let url = `http://localhost:5000/myphotos?email=${email}`;
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => setMyImages(data));
+    }
+  }, [user]);
 
   return (
     <div>
-      <h1 className="text-center mt-5 text-3xl font-bold">
+      <h1 className="text-center mt-5  text-3xl font-bold">
         My Images {myimages.length}
       </h1>
 
