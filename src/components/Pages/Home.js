@@ -6,6 +6,7 @@ import auth from "./../../firebase.init";
 
 const Home = () => {
   const [myimages, setMyImages] = useState([]);
+  const [query, setQuery] = useState("");
   const [user] = useAuthState(auth);
   // console.log(user);
 
@@ -25,15 +26,63 @@ const Home = () => {
         My Images {myimages.length}
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10 my-10">
-        {myimages.map((image, index) => {
-          return (
-            <div>
-              {/* <h1>{image.url}</h1> */}
-              <ImageCard key={index} images={image} />{" "}
+      <div className="card-actions flex justify-center items-center">
+        <h1 className="text-center text-1xl mb-5 flex flex-row">
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text bg-blue-800 rounded px-5 text-white p-1">
+                Search by Name
+              </span>
+            </label>
+            <div className="input-group">
+              <input
+                type="text"
+                placeholder="Search by Name"
+                className="input input-bordered w-Full border-3 border-black"
+                onChange={(e) => setQuery(e.target.value)}
+                min="0"
+              />
             </div>
-          );
-        })}
+          </div>
+        </h1>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10 my-10">
+        <div>
+          {query === null || query === "" ? (
+            <>
+              {myimages.map((image, index) => {
+                return (
+                  <div>
+                    <ImageCard key={index} images={image} />{" "}
+                  </div>
+                );
+              })}
+            </>
+          ) : (
+            <>
+              {myimages
+                .filter((asd) =>
+                  asd.name.toLowerCase().includes(query)
+                )
+                .map((image, index) => {
+                  return (
+                    <div>
+                      <ImageCard key={index} images={image} />
+                    </div>
+                  );
+                })}
+            </>
+          )}
+          {/* <h1>{image.url}</h1> */}
+
+          {/* <ImageCard
+                key={index}
+                images={image}
+                setQuery={setQuery}
+                query={query}
+              /> */}
+        </div>
       </div>
     </div>
   );
