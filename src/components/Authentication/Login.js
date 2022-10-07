@@ -57,7 +57,7 @@ const Login = () => {
               Hi 👋 Welcome to
             </h1>
             <p className="pr-3 text-base-content">
-              Dobby. Please sign in to your account.
+              Dobby Gallery. Please sign in to your account.
             </p>
           </div>
         </div>
