@@ -48,7 +48,7 @@ const Login = () => {
 
   return (
     <div className="bg-no-repeat  opacity-75 inset-0 z-0 bg-cover bg-center relative">
-      <div className="absolute  opacity-75 inset-0 z-0"></div>
+      {/* <div className="absolute  opacity-75 inset-0 z-0"></div> */}
       <div className="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
         <div className="flex-col flex  self-center p-10 sm:max-w-5xl xl:max-w-2xl  z-10">
           <div className="self-start hidden lg:flex flex-col  text-base-content">
@@ -172,7 +172,7 @@ const Login = () => {
                 <span>
                   Create New Account?
                   <Link
-                    to="/signup"
+                    to="/register"
                     className="ml-2 text-green hover:text-green-500 "
                   >
                     Sign Up
@@ -181,7 +181,7 @@ const Login = () => {
                 </span>
               </div>
             </form>
-            {/* <div className="mt-2 divider divide-black"></div> */}
+            <div className="mt-2 divider divide-black"></div>
             <div className="flex items-center justify-center">
               <button
                 onClick={() => signInWithGoogle()}

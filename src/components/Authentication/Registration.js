@@ -51,7 +51,7 @@ const Registration = () => {
 
   return (
     <div className="bg-no-repeat bg-cover bg-center relative">
-      <div className="absolute  opacity-75 inset-0 z-0"></div>
+      {/* <div className="absolute  opacity-75 inset-0 z-0"></div> */}
       <div className="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
         <div className="flex-col flex  self-center p-10 sm:max-w-5xl xl:max-w-2xl  z-10">
           <div className="self-start hidden lg:flex flex-col  text-base-content">
@@ -189,7 +189,7 @@ const Registration = () => {
                 </Link>
               </span>
             </div>
-            {/* <div className="divider"></div> */}
+            <div className="divider"></div>
             <div className="flex items-center justify-center">
               <button
                 onClick={() => signInWithGoogle()}
