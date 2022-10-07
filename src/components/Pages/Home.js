@@ -48,41 +48,39 @@ const Home = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10 my-10">
-        <div>
-          {query === null || query === "" ? (
-            <>
-              {myimages.map((image, index) => {
+        {query === "" ? (
+          <>
+            {myimages.map((image, index) => {
+              return (
+                <div>
+                  <ImageCard key={index} images={image} />{" "}
+                </div>
+              );
+            })}
+          </>
+        ) : (
+          <>
+            {myimages
+              .filter((asd) => asd.name.toLowerCase().includes(query))
+              .map((image, index) => {
                 return (
                   <div>
-                    <ImageCard key={index} images={image} />{" "}
+                    <ImageCard key={index} images={image} />
                   </div>
                 );
               })}
-            </>
-          ) : (
-            <>
-              {myimages
-                .filter((asd) =>
-                  asd.name.toLowerCase().includes(query)
-                )
-                .map((image, index) => {
-                  return (
-                    <div>
-                      <ImageCard key={index} images={image} />
-                    </div>
-                  );
-                })}
-            </>
-          )}
-          {/* <h1>{image.url}</h1> */}
+          </>
+        )}
+        {/* <h1>{image.url}</h1> */}
 
-          {/* <ImageCard
+        {/* <ImageCard
                 key={index}
                 images={image}
                 setQuery={setQuery}
                 query={query}
               /> */}
-        </div>
+
+        
       </div>
     </div>
   );
