@@ -54,10 +54,10 @@ const Login = () => {
           <div className="self-start hidden lg:flex flex-col  text-base-content">
             {/* <img src="" className="mb-3" /> */}
             <h1 className="mb-3 font-bold text-5xl text-base-content">
-              Hi 👋 Welcome to{" "}
+              Hi 👋 Welcome to
             </h1>
             <p className="pr-3 text-base-content">
-              Rafath Dobby. Please sign in to your account.
+              Dobby. Please sign in to your account.
             </p>
           </div>
         </div>
@@ -65,7 +65,7 @@ const Login = () => {
           <div className="p-12 bg-transparnet mx-auto rounded-2xl w-100 ">
             <div className="mb-4">
               <h3 className="font-semibold text-2xl text-base-content">
-                Sign In{" "}
+                Sign In
               </h3>
               <p className="text-base-content"></p>
             </div>

@@ -57,7 +57,7 @@ const Registration = () => {
           <div className="self-start hidden lg:flex flex-col  text-base-content">
             {/* <img src="" className="mb-3" /> */}
             <h1 className="mb-3 font-bold text-5xl text-base-content">
-              New to Marley Electronics ?{" "}
+              New to Dobby Gallery
             </h1>
             <p className="pr-3 text-base-content">
               Please create your account. 🎉
