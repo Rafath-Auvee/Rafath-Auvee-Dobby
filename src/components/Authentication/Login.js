@@ -181,7 +181,7 @@ const Login = () => {
                 </span>
               </div>
             </form>
-            <div className="mt-2 divider divide-black"></div>
+            {/* <div className="mt-2 divider divide-black"></div> */}
             <div className="flex items-center justify-center">
               <button
                 onClick={() => signInWithGoogle()}

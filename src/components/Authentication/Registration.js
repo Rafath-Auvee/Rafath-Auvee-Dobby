@@ -189,7 +189,7 @@ const Registration = () => {
                 </Link>
               </span>
             </div>
-            <div className="divider"></div>
+            {/* <div className="divider"></div> */}
             <div className="flex items-center justify-center">
               <button
                 onClick={() => signInWithGoogle()}
