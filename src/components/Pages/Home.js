@@ -31,15 +31,15 @@ const Home = () => {
           <div className="form-control">
             <label className="label">
               <span className="label-text bg-blue-800 rounded px-5 text-white p-1">
-                Search by Name <br /> (All Lowercase Character)
+                Search by Name 
               </span>
             </label>
             <div className="input-group">
               <input
                 type="text"
-                placeholder="All Lowercase"
+                placeholder="Search by Name "
                 className="input input-bordered w-Full border-3 border-black"
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => setQuery(e.target.value.toLowerCase())}
                 min="0"
               />
             </div>
