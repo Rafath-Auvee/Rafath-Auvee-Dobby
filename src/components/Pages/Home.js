@@ -31,13 +31,13 @@ const Home = () => {
           <div className="form-control">
             <label className="label">
               <span className="label-text bg-blue-800 rounded px-5 text-white p-1">
-                Search by Name
+                Search by Name <br /> (All Lowercase Character)
               </span>
             </label>
             <div className="input-group">
               <input
                 type="text"
-                placeholder="Search by Name"
+                placeholder="All Lowercase"
                 className="input input-bordered w-Full border-3 border-black"
                 onChange={(e) => setQuery(e.target.value)}
                 min="0"
